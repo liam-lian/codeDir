@@ -1,4 +1,4 @@
-package main.java.graph;/*
+package graph;/*
  *   Created by coder-pig@outlook.com on 2017/4/6.
  */
 

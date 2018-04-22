@@ -1,8 +1,8 @@
-package main.java.SearchTree;/*
+package SearchTree;/*
  *   Created by coder-pig@outlook.com on 2017/4/6.
  */
 
-import main.java._entity.TreeNode;
+import _entity.TreeNode;
 
 public class DeleteNode {
 

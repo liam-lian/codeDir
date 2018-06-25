@@ -6,29 +6,19 @@
 public class test {
 
 
-    public void pp() throws Exception {
-        synchronized (p) {
-            p=new Person("s");
-            throw new Exception();
-        }
-    }
+    public static void main(String[] args) throws InterruptedException {
 
-    private static Person p=new Person("静态变量");
-    private  Person p1=new Person("非静态变量");
+        Thread t=new Thread(()->{
+            try {
+                Thread.sleep(10000000);
+            } catch (InterruptedException e) {
+                System.out.println("线程中断");
+                e.printStackTrace();
+            }
+        });
 
-    static {
-        System.out.println("静态代码快");
-    }
-
-    {
-        System.out.println("非静态代码快");
-    }
-
-    public test() {
-        System.out.println("test");
-    }
-
-    public static void main(String[] args) {
-
+        t.start();
+        Thread.sleep(2000);
+        t.interrupt();
     }
 }

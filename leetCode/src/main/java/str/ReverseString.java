@@ -6,7 +6,6 @@ public class ReverseString {
 
     public String reverseString(String s) {
 
-
         char[] val=s.toCharArray();
         int n=val.length-1;
         int left=(n-1)>>1;

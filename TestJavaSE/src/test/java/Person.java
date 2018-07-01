@@ -4,6 +4,7 @@
  */
 
 import java.io.*;
+import java.util.concurrent.*;
 
 public class Person {
 
@@ -14,10 +15,26 @@ public class Person {
     }
 
     public static void main(String[] args) {
-       Person p=new Person("sss");
 
-        System.out.println(p.name);
 
+        ExecutorService exec=Executors.newSingleThreadExecutor();
+        Future ft=  exec.submit(()-> {
+            try {
+                Thread.sleep(100000000);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+        });
+
+
+        ft.cancel(true);
+        try {
+            System.out.println(ft.get());
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        } catch (ExecutionException e) {
+            e.printStackTrace();
+        }
     }
 
     public static void doo(final Person p) throws FileNotFoundException, UnsupportedEncodingException {

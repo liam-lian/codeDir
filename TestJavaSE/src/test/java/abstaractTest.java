@@ -5,9 +5,5 @@ import java.util.concurrent.ConcurrentHashMap;
  */
 abstract public class abstaractTest {
 
-    abstract  int a();
 
-    {
-        ConcurrentHashMap map=new ConcurrentHashMap();
-    }
 }
